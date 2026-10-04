@@ -7,7 +7,7 @@
     <meta name="description" content="list" />
     <meta name="hexo-theme-A4" content="v2.0.1" />
     <link rel="alternate icon" type="image/webp" href="/blog/img/favicon.png">
-    <title>卜天一的博客</title>
+    <title>Buskyiの博客</title>
 
     
         
@@ -89,6 +89,23 @@
 
     
     
+    <style>
+        body {
+            background-image: url(/blog/img/background.png);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/blog/img/background.png);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+
 
 
     <body>
@@ -186,8 +203,9 @@
             src="/blog/img/favicon.png" 
         />
         <div class="header-content">
-            <a class="logo" href="/blog/">卜天一的博客</a> 
-            <span class="description"></span> 
+            
+            <a class="logo" href="/blog/">帅萝卜</a> 
+            <span class="description">IT公民|算法小白|大模型</span> 
         </div>
     </div>
     
@@ -210,10 +228,12 @@
                 <li><a href="/blog/tags/">标签</a></li>
             
         
-            
-                <li><a href="/blog/categories/">分类</a></li>
-            
-        
+        <!-- 暂时注释掉，还需要调整css 
+        <li class="search">
+            <input type="text" id="search-input" placeholder="搜索文章..." />
+            <div id="search-results"></div>
+        </li>
+         -->
     </ul>
 </div>
                      <div class="archive-list">
@@ -255,7 +275,7 @@
       
         
         <li>
-          <span class="year-font-color">2026[2]
+          <span class="year-font-color">2026[1]
              <span class="darkmode-ignore">🍃</span> 
           </span>
         </li>
@@ -267,17 +287,7 @@
             </span>
             <div class="archive-main">
               
-                <a class="archive-title" href="/blog/2026/10/04/hello-world/">Hello World</a>
-            </div>
-          </li>
-        
-          
-          <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;09/02 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/blog/2026/09/02/%E7%AE%97%E6%B3%95/"></a>
+                <a class="archive-title" href="/blog/2026/10/04/%E7%AE%97%E6%B3%95/">算法</a>
             </div>
           </li>
         
@@ -413,6 +423,7 @@
     </body>
 </html>
 <script src="/blog/js/emojiHandler.js"></script>
+<script src="/blog/js/search.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         wrapEmojis('.paper');

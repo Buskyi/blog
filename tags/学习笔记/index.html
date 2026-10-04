@@ -4,10 +4,10 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="categories" />
+    <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v2.0.1" />
     <link rel="alternate icon" type="image/webp" href="/blog/img/favicon.png">
-    <title>卜天一的博客</title>
+    <title>Buskyiの博客</title>
 
     
         
@@ -89,6 +89,23 @@
 
     
     
+    <style>
+        body {
+            background-image: url(/blog/img/background.png);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }
+        .paper {
+            background-image: url(/blog/img/background.png);
+            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
+            background-repeat: no-repeat;  /* 防止背景图片重复 */
+            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
+            background-position: center;   /* 背景居中显示 */
+        }  
+    </style>
+
 
 
     <body>
@@ -186,8 +203,9 @@
             src="/blog/img/favicon.png" 
         />
         <div class="header-content">
-            <a class="logo" href="/blog/">卜天一的博客</a> 
-            <span class="description"></span> 
+            
+            <a class="logo" href="/blog/">帅萝卜</a> 
+            <span class="description">IT公民|算法小白|大模型</span> 
         </div>
     </div>
     
@@ -203,42 +221,50 @@
             
         
             
-                <li><a href="/blog/tags/">标签</a></li>
-            
-        
-            
                 <li><i>
                     
-                        <a style="color: #4e7dde;" href="/blog/categories/">分类</a>
+                        <a style="color: #4e7dde;" href="/blog/tags/">标签</a>
                     
                 </i></li>
             
         
+        <!-- 暂时注释掉，还需要调整css  -->
     </ul>
 </div>
 
                     
                     
-                            <br>
-<span><span class="darkmode-ignore">🔖</span><i>categories</i></span>
-<ul class="" >
-  
 
-  
-
-  
-
-  
-  
-  
-  
-  
-      
-    
-
-    
-</ul>
                     
+                            
+
+
+<div class="archive-list">
+  <ul class="archive">
+
+    
+    <span><span class="darkmode-ignore">📌</span><i>学习笔记</i></span>
+ 
+    
+
+    
+    
+
+    
+
+    
+  
+    
+        <li>
+        <span class="archive-date">2026-10-04</span>
+        <div class="archive-main">
+            <a class="archive-title" href="/blog/2026/10/04/%E7%AE%97%E6%B3%95/">算法</a>
+        </div>
+        </li>
+    
+  
+  </ul>
+</div>
 
                     
                     
@@ -374,6 +400,7 @@
     </body>
 </html>
 <script src="/blog/js/emojiHandler.js"></script>
+<script src="/blog/js/search.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         wrapEmojis('.paper');
