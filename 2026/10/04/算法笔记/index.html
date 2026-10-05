@@ -4,10 +4,10 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="算法" />
+    <meta name="description" content="算法笔记" />
     <meta name="hexo-theme-A4" content="v2.0.1" />
-    <link rel="alternate icon" type="image/webp" href="/blog/img/favicon.png">
-    <title>Buskyiの博客</title>
+    <link rel="alternate icon" type="image/webp" href="/blog/img/avatar.png">
+    <title>算法笔记 | Buskyiの博客</title>
 
     
         
@@ -88,17 +88,182 @@
 
 
     
+    <style>
+        :root {
+            --waline-theme-color: #000000; 
+            --waline-color: #000000; 
+            --waline-border-color: #000000; 
+            --waline-white: #000000; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #000000;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #f0eade;
+            color: #000000; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #f0eade;
+            color: #000000; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
+        }
+        .year-font-color {
+            color: #000000 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #000000; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #000000;
+            color: #000000; 
+        }
+        .wl-btn {
+            border: 1px solid #000000; 
+            color:  #000000;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #000000;
+        }
+        a {
+            color: #4f7dde;
+        }
+
+        .post-md a {
+            color: #4f7dde;
+        }
+
+        .nav li a {
+            color: #4f7dde;
+        }
+
+        .archive-main a:link {
+            color: #4f7dde;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #000000;
+        }
+
+        .post-main-title {
+            color: #000000;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #000000;
+        }
+
+        [data-waline] p {
+            color: #000000;
+        }
+        [data-waline] a {
+            color: #000000;
+        } 
+        .wl-sort li.active {
+            color: #000000;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #4f7dde, #4f7dde); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #4f7dde, #4f7dde); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #000000; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #4f7dde;
+            border-left-color: #4f7dde;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #000000;
+        }
+    </style>
+
     
     <style>
         body {
-            background-image: url(/blog/img/background.png);
+            background-image: url(/blog/img/background.jpg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
             background-position: center;   /* 背景居中显示 */
         }
         .paper {
-            background-image: url(/blog/img/background.png);
+            background-image: url(/blog/img/background.jpg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
@@ -196,7 +361,7 @@
                 height: auto;
                 object-fit: cover; /* 保持图片比例 */
                 transition: transform 0.3s ease-in-out; 
-                border-radius: 0; 
+                border-radius: 50%; 
             }
             
         </style>
@@ -204,7 +369,7 @@
             alt="^-^" 
             cache-control="max-age=86400" 
             class="header-img" 
-            src="/blog/img/favicon.png" 
+            src="/blog/img/avatar.png" 
         />
         <div class="header-content">
             
@@ -247,7 +412,7 @@
         
             
                 <div class="post-main-title" style="text-align: center;">
-                    算法
+                    算法笔记
                 </div>
             
         
@@ -269,26 +434,12 @@
                      <span>字数总计：2.5k</span>
                 
                 
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span>阅读估时：13分钟</span>
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span id="busuanzi_container_page_pv">
-                        阅读量：<span id="busuanzi_value_page_pv"></span>次
-                    </span>
                 
             </div>
     
 
     <div class="post-md">
         
-            
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%A4%8D%E4%B9%A0"><span class="post-toc-text">复习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="post-toc-text">小知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cmath%E5%BA%93"><span class="post-toc-text">cmath库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#string%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="post-toc-text">string常用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#set%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="post-toc-text">set常用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="post-toc-text">快速幂</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%BE%9F%E9%80%9F%E4%B9%98"><span class="post-toc-text">龟速乘</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%88%86"><span class="post-toc-text">二分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%EF%BC%88%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%EF%BC%89"><span class="post-toc-text">欧几里得（最大公约数）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97"><span class="post-toc-text">扩展欧几里得</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%BF%E6%80%A7%E7%AD%9B%E8%B4%A8%E6%95%B0"><span class="post-toc-text">线性筛质数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%86%E5%85%83"><span class="post-toc-text">逆元</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E9%82%BB%E6%8E%A5%E8%A1%A8%EF%BC%88%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F%EF%BC%89"><span class="post-toc-text">数组模拟邻接表（链式前向星）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Trie%E6%A0%91"><span class="post-toc-text">Trie树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E6%A8%A1%E6%9D%BF"><span class="post-toc-text">树状数组模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%A8%A1%E6%9D%BF"><span class="post-toc-text">线段树模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="post-toc-text">并查集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dijkstra"><span class="post-toc-text">Dijkstra</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#spfa"><span class="post-toc-text">spfa</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Floyd"><span class="post-toc-text">Floyd</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Kruskal"><span class="post-toc-text">Kruskal</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89"><span class="post-toc-text">最近公共祖先（LCA）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%EF%BC%88%E7%BA%A6%E6%97%A6%E6%B6%88%E5%85%83%E6%B3%95%EF%BC%89"><span class="post-toc-text">高斯消元（约旦消元法）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="post-toc-text">离散化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="post-toc-text">随机数</span></a></li></ol></li></ol>
             
         
         <div class=".article-gallery"><h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h2 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h2><ul>
@@ -537,8 +688,6 @@
     
 </script>
 
-
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             

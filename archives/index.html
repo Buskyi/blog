@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v2.0.1" />
-    <link rel="alternate icon" type="image/webp" href="/blog/img/favicon.png">
+    <link rel="alternate icon" type="image/webp" href="/blog/img/avatar.png">
     <title>Buskyiの博客</title>
 
     
@@ -88,17 +88,182 @@
 
 
     
+    <style>
+        :root {
+            --waline-theme-color: #000000; 
+            --waline-color: #000000; 
+            --waline-border-color: #000000; 
+            --waline-white: #000000; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #000000;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #f0eade;
+            color: #000000; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #f0eade;
+            color: #000000; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
+        }
+        .year-font-color {
+            color: #000000 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #000000; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #000000;
+            color: #000000; 
+        }
+        .wl-btn {
+            border: 1px solid #000000; 
+            color:  #000000;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #000000;
+        }
+        a {
+            color: #4f7dde;
+        }
+
+        .post-md a {
+            color: #4f7dde;
+        }
+
+        .nav li a {
+            color: #4f7dde;
+        }
+
+        .archive-main a:link {
+            color: #4f7dde;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #000000;
+        }
+
+        .post-main-title {
+            color: #000000;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #000000;
+        }
+
+        [data-waline] p {
+            color: #000000;
+        }
+        [data-waline] a {
+            color: #000000;
+        } 
+        .wl-sort li.active {
+            color: #000000;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #4f7dde, #4f7dde); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #4f7dde, #4f7dde); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #000000; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #4f7dde;
+            border-left-color: #4f7dde;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #000000;
+        }
+    </style>
+
     
     <style>
         body {
-            background-image: url(/blog/img/background.png);
+            background-image: url(/blog/img/background.jpg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
             background-position: center;   /* 背景居中显示 */
         }
         .paper {
-            background-image: url(/blog/img/background.png);
+            background-image: url(/blog/img/background.jpg);
             background-attachment: fixed;  /* 背景固定，不随页面滚动 */
             background-repeat: no-repeat;  /* 防止背景图片重复 */
             background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
@@ -192,7 +357,7 @@
                 height: auto;
                 object-fit: cover; /* 保持图片比例 */
                 transition: transform 0.3s ease-in-out; 
-                border-radius: 0; 
+                border-radius: 50%; 
             }
             
         </style>
@@ -200,7 +365,7 @@
             alt="^-^" 
             cache-control="max-age=86400" 
             class="header-img" 
-            src="/blog/img/favicon.png" 
+            src="/blog/img/avatar.png" 
         />
         <div class="header-content">
             
@@ -390,8 +555,6 @@
     
 </script>
 
-
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
