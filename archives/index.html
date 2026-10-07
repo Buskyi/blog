@@ -367,20 +367,46 @@ mjx-container[display="true"] + br {
 
     
     <style>
-        body {
+        html {
             background-image: url(/blog/img/background.jpg);
-            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
-            background-repeat: no-repeat;  /* 防止背景图片重复 */
-            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
-            background-position: center;   /* 背景居中显示 */
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow-y: scroll;
         }
+
+        /* 创建堆叠上下文，让遮罩在内容下方 */
+        body {
+            position: relative;
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+
+        /* 黑色遮罩：默认完全透明，只在背景层 */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            pointer-events: none;
+            transition: background 0.3s ease;
+            z-index: -1; /* 关键：放在内容下方 */
+        }
+
+        /* DarkReader开启时，遮罩变暗，只压背景 */
+        html[data-darkreader-mode="dynamic"] body::before {
+            background: rgba(0, 0, 0, 0.45);
+        }
+
         .paper {
-            background-image: url(/blog/img/background.jpg);
-            background-attachment: fixed;  /* 背景固定，不随页面滚动 */
-            background-repeat: no-repeat;  /* 防止背景图片重复 */
-            background-size: cover;       /* 背景自适应大小，覆盖整个背景 */
-            background-position: center;   /* 背景居中显示 */
-        }  
+            background-image: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+        .page {
+            transition: none !important;
+        }
     </style>
 
 
@@ -395,12 +421,15 @@ mjx-container[display="true"] + br {
                 sepia: 10,
                 darkSchemeTextColor: '#e0e0e0',  // 粉笔白文字
                 darkSchemeBackgroundColor: '#1e1e1e', // 黑板灰背景
-                scrollbarStyle: 'native'
+                scrollbarStyle: 'native',
+                ignoreInlineStyleSheets: true //新增这一行
             };
 
             const savedTheme = localStorage.getItem('theme');
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                // 控制台报错根源：DarkReader 尝试去读取CDN上的外部字体css文件，浏览器跨域CORS阻止它读取
+                DarkReader.setFetchMethod(window.fetch); // 让DarkReader使用浏览器原生fetch去拉取外部样式，绕过它自己内置的跨域限制。
                 DarkReader.enable(drOptions);
             }
 
@@ -440,6 +469,7 @@ mjx-container[display="true"] + br {
                         btn.style.backgroundColor = '#f7f5ed';
                         btn.style.color = '#000';
                     } else {
+                        DarkReader.setFetchMethod(window.fetch); // 同理
                         DarkReader.enable(drOptions);
                         localStorage.setItem('theme', 'dark');
                         btn.style.backgroundColor = '#1e1e1e';
